@@ -80,6 +80,11 @@ app.post('/login', (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is listening on http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  
+  app.listen(5000, () => {
+    console.log("Server is running on http://localhost:5000");
+  });
+}
+
+module.exports = app;
